@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Choose Your Romantic Date</title>
+  <link rel="stylesheet" href="styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Great+Vibes&display=swap" rel="stylesheet">
+  <!-- Include Fireworks.js -->
+  <script src="https://cdn.jsdelivr.net/npm/fireworks-js@2.x/dist/index.umd.js"></script>
+</head>
+<body>
+  <!-- Fireworks Container -->
+  <div id="fireworks-container" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1;"></div>
+
+  <!-- Main Content -->
+  <div class="container">
+    <h1>Choose Your Romantic Date Itinerary</h1>
+    <div class="scrollable-options">
+      <!-- Option 1: Dinner or Lunch Date -->
+      <div class="option">
+        <img src="images/dinner.jpg" alt="Dinner Date">
+        <h2>Dinner or Lunch Date</h2>
+        <label>
+          <input type="radio" name="meal" value="dinner"> Dinner Date
+        </label>
+        <label>
+          <input type="radio" name="meal" value="lunch"> Lunch Date
+        </label>
+      </div>
+
+      <!-- Option 2: Dessert or Cocktail -->
+      <div class="option">
+        <img src="images/dessert.jpg" alt="Dessert or Cocktail">
+        <h2>Dessert or Cocktail</h2>
+        <label>
+          <input type="radio" name="dessert" value="dessert"> Dessert
+        </label>
+        <label>
+          <input type="radio" name="dessert" value="cocktail"> Cocktail
+        </label>
+      </div>
+
+      <!-- Option 3: Horror Movie or Late Night Walk -->
+      <div class="option">
+        <img src="images/movie.jpg" alt="Horror Movie">
+        <h2>Horror Movie with Cuddle Session or Late Night Walk</h2>
+        <label>
+          <input type="checkbox" name="activity" value="movie"> Horror Movie with Cuddle Session
+        </label>
+        <label>
+          <input type="checkbox" name="activity" value="walk"> Late Night Walk
+        </label>
+      </div>
+    </div>
+    <button id="submitBtn">Submit</button>
+  </div>
+
+  <script>
+    // Initialize Fireworks
+    const container = document.getElementById('fireworks-container');
+    const fireworks = new Fireworks(container, {
+      speed: 4,
+      acceleration: 1.05,
+      friction: 0.98,
+      gravity: 1,
+      particles: 100,
+      explosion: 10,
+      boundaries: {
+        top: 0,
+        bottom: container.clientHeight,
+        left: 0,
+        right: container.clientWidth,
+      },
+      sound: {
+        enable: true,
+        list: [
+          'https://fireworks.js.org/sounds/explosion0.mp3',
+          'https://fireworks.js.org/sounds/explosion1.mp3',
+          'https://fireworks.js.org/sounds/explosion2.mp3',
+        ],
+      },
+    });
+
+    // Start Fireworks
+    fireworks.start();
+  </script>
+</body>
+</html>
